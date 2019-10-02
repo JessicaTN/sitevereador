@@ -42,7 +42,7 @@ class Noticia extends Conectar {
         try {
             $conexao = $this->Conecta();
             $conexao->beginTransaction();
-            $sql = "SELECT * FROM noticias order by nome";
+            $sql = "SELECT * FROM noticias order by titulo_da_noticia";
             $listar = $conexao->prepare($sql);
             $listar->execute();
             return $listar->fetchAll();
@@ -60,3 +60,4 @@ class Noticia extends Conectar {
     }
 
 }
+
